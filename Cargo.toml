@@ -18,11 +18,18 @@ proc-macro = true
 
 [features]
 strip = [] # Omit debug info from generated SPIR-V by default
-default-optimize-zero = [] # Set default optimization level to zero for debugging
-build-from-source = ["shaderc/build-from-source"] # Force shaderc to be built from source
+default-optimize-zero = [
+] # Set default optimization level to zero for debugging
+build-from-source = [
+    "shaderc/build-from-source",
+] # Force shaderc to be built from source
 
 [dependencies]
-syn = { version = "1.0.89", default-features = false, features = [ "parsing", "proc-macro", "derive" ] }
+syn = { version = "1.0.89", default-features = false, features = [
+    "parsing",
+    "proc-macro",
+    "derive",
+] }
 quote = "1.0.17"
 proc-macro2 = "1.0.36"
-shaderc = "0.7.4"
+shaderc = "0.8.2"
